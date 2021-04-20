@@ -34,30 +34,27 @@ def api_doc():
 @app.route("/api/v1.0/chess")
 def earthquake_db():
     results_list=[]
-    results=engine.execute("SELECT * FROM CHESS")
+    results=engine.execute("SELECT * FROM CHESS_DATA")
     
     for result in results:
         results_list.append(result)
     
     json_dict={"data":[]}
     
-    for game_id, rated, created_at, last_move, turns, victory_status, increment_code, white_id, white_rating, black_id, black_rating, Opening_Eco, Opening_Name, Opening_Ply in results_list:
+    for id, format, victory_status, book_moves, opening_name, winner, turns, white_id, white_rating, black_id, black_rating in results_list:
         test_dict={"properties":{}}
         
-        test_dict["properties"]["game_id"]=game_id
-        test_dict["properties"]["rated"]=rated
-        test_dict["properties"]["created_at"]=created_at
-        test_dict["properties"]["last_move"]=last_move
-        test_dict["properties"]["turns"]=turns
+        test_dict["properties"]["id"]=id
+        test_dict["properties"]["rated"]=format
         test_dict["properties"]["victory_status"]=victory_status
-        test_dict["properties"]["increment_code"]=increment_code
+        test_dict["properties"]["book_moves"]=book_moves
+        test_dict["properties"]["opening_name"]=opening_name
+        test_dict["properties"]["winner"]=winner
+        test_dict["properties"]["turns"]=turns
         test_dict["properties"]["white_id"]=white_id
         test_dict["properties"]["white_rating"]=white_rating
         test_dict["properties"]["black_id"]=black_id
         test_dict["properties"]["black_rating"]=black_rating
-        test_dict["properties"]["Opening_Eco"]=Opening_Eco
-        test_dict["properties"]["Opening_Name"]=Opening_Name
-        test_dict["properties"]["Opening_Ply"]=Opening_Ply
 
         json_dict["data"].append(test_dict)
 
