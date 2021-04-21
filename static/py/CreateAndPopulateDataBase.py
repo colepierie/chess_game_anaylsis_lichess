@@ -17,3 +17,17 @@ cur = conn.cursor()
 # Fetch and display result 
 count = cur.execute('SELECT COUNT(id) FROM CHESS_DATA')
 print(count.fetchone())
+
+# Load the data from CSV
+file_name = "data/players.csv" 
+data = pd.read_csv(file_name)
+
+# Load to the DB, replace if exists
+data.to_sql('PLAYER_DATA', conn, if_exists='replace', index = False)
+
+# Create a cursor object 
+cur = conn.cursor() 
+
+# Fetch and display result 
+count = cur.execute('SELECT COUNT(game_id) FROM PLAYER_DATA')
+print(count.fetchone())
