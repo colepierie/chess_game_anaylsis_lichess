@@ -32,7 +32,7 @@ def api_doc():
 
 # route for full data set
 @app.route("/api/v1.0/chess")
-def earthquake_db():
+def chess_data():
     results_list=[]
     results=engine.execute("SELECT * FROM CHESS_DATA")
     
@@ -60,6 +60,34 @@ def earthquake_db():
 
     return jsonify(json_dict)
 
+# route for full data set
+@app.route("/api/v1.0/players")
+def player_data():
+    results_list=[]
+    results=engine.execute("SELECT * FROM PLAYER_DATA")
+    
+    for result in results:
+        results_list.append(result)
+    
+    json_dict={"data":[]}
+    
+    for game_id, format, player_id, player_rating, opening_name, book_moves, turns, result, rating_difference, player_level in results_list:
+        test_dict={"properties":{}}
+        
+        test_dict["properties"]["game_id"]=game_id
+        test_dict["properties"]["rated"]=format
+        test_dict["properties"]["player_id"]=player_id
+        test_dict["properties"]["player_rating"]=player_rating
+        test_dict["properties"]["opening_name"]=opening_name
+        test_dict["properties"]["book_moves"]=book_moves
+        test_dict["properties"]["turns"]=turns
+        test_dict["properties"]["result"]=result
+        test_dict["properties"]["rating_difference"]=rating_difference
+        test_dict["properties"]["player_level"]=player_level
+
+        json_dict["data"].append(test_dict)
+
+    return jsonify(json_dict)
 
     
 #close out flask
