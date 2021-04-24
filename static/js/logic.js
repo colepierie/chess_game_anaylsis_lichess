@@ -1,3 +1,6 @@
+// embeding Tableau 
+
+      
 // FILTER FUNCTIONS ______________________________________________________________________________
 //get current date
 function getToday() {
@@ -47,6 +50,8 @@ d3.json("https://california-disasters.herokuapp.com/api/v1.0/fire", function(res
     fireData.push(response["data"][i]["properties"])
   }
 });
+
+
 
 var earthquakeData = []
 // d3.json("http://127.0.0.1:5000/api/v1.0/earthquake", function(response) {
