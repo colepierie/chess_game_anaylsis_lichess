@@ -81,13 +81,147 @@
                 <span>Toggle Sidebar</span>
             </button>
             <div class="heading">
-                <h1>Chess Win Rates Analysis</h1>
+                <h1>Chess Game Dataset (Lichess) API Documentation</h1>
             </div>
-            <div class="line"></div>
 
-            <div class='tableauPlaceholder' id='viz1619279809003' style='position: relative'>
-                <noscript><a href='#'><img alt='top 15 openings for white ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ch&#47;chess_16190538411440&#47;top15openingsforwhite&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='chess_16190538411440&#47;top15openingsforwhite' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ch&#47;chess_16190538411440&#47;top15openingsforwhite&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1619279809003');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+            <div class="line">
+            </div>
+            <p>
+                Data sourced from Kaggle's <a href="https://www.kaggle.com/datasnaek/chess">Chess Game Dataset (Lichess)</a> data set.
+                <br><br>
+                <strong>Base: </strong><a href="https://chessgameanalysis-lichess.herokuapp.com/api/v1.0/chess">https://chessgameanalysis-lichess.herokuapp.com/api/v1.0/chess</a>
+                <br>
+                Retrieves the full cleaned data set containing the below fields:
+                <table style="width:100%">
+                    <tr>
+                      <th>Field</th>
+                      <th>Description</th>
+                      <th>Data Type</th>
+                    </tr>
+                    <tr>
+                      <td>id</td>
+                      <td>The unique identifier for each game</td>
+                      <td>string</td>
+                    </tr>
+                    <tr>
+                      <td>format</td>
+                      <td>The type of game played. Valid values include: Bullet, Blitz, Classic, and Rapid</td>
+                      <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>victory_status</td>
+                        <td>The conclusive state of the game. Valid values include: mate, and resign.</td>
+                        <td>string</td>
+                      </tr>
+                      <tr>
+                        <td>book_moves</td>
+                        <td></td>
+                        <td>integer</td>
+                      </tr>
+                      <tr>
+                        <td>opening_name</td>
+                        <td>The name given to the first move played in the game.</td>
+                        <td>string</td>
+                      </tr>
+                      <tr>
+                        <td>winner</td>
+                        <td>Who won the match. Valid values include: white and black.</td>
+                        <td>string</td>
+                      </tr>
+                      <tr>
+                        <td>turns</td>
+                        <td>How many turns accured before the match concluded.</td>
+                        <td>integer</td>
+                      </tr>
+                      <tr>
+                        <td>white_id</td>
+                        <td>The unique identifier for the player who played white.</td>
+                        <td>string</td>
+                      </tr>
+                      <tr>
+                        <td>white_rating</td>
+                        <td>The rating assigned to the player who played white corresponding to their performance versus other player.</td>
+                        <td>integer</td>
+                      </tr>
+                      <tr>
+                        <td>black_id</td>
+                        <td>The unique identifier for the player who played black.</td>
+                        <td>string</td>
+                      </tr>
+                      <tr>
+                        <td>black_rating</td>
+                        <td>The rating assigned to the player who played black corresponding to their performance versus other player.</td>
+                        <td>integer</td>
+                      </tr>
+                  </table>
+
+                </p>
+                <div class="line"></div>
+                <p>
+                  <strong>Players: </strong><a href="https://chessgameanalysis-lichess.herokuapp.com/api/v1.0/players">https://chessgameanalysis-lichess.herokuapp.com/api/v1.0/players</a>
+                  <br>
+                  Retrieves the data set that has been normalized for each player, containing the below fields:
+                  <table style="width:100%">
+                    <tr>
+                        <th>Field</th>
+                        <th>Description</th>
+                        <th>Data Type</th>
+                    </tr>
+                    <tr>
+                        <td>game_id</td>
+                        <td>The unique identifier for each game</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>format</td>
+                        <td>The type of game played. Valid values include: Bullet, Blitz, Classic, and Rapid</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>player_id</td>
+                        <td>The unique identifier for the player.</td>
+                        <td>string</td>
+                    </tr>
+                        <tr>
+                        <td>player_rating</td>
+                        <td>The rating assigned to the player corresponding to their performance versus other player.</td>
+                        <td>integer</td>
+                    </tr>
+                    <tr>
+                        <td>opening_name</td>
+                        <td>The name given to the first move played in the game.</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>book_moves</td>
+                        <td></td>
+                        <td>integer</td>
+                    </tr>
+                    <tr>
+                        <td>turns</td>
+                        <td>How many turns accured before the match concluded.</td>
+                        <td>integer</td>
+                    </tr>
+                    <tr>
+                        <td>result</td>
+                        <td>The conclusive state of the game for the player. Valid values include: won and lost.</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>rating_difference</td>
+                        <td>The difference in the player's rating and their opponent.</td>
+                        <td>integer</td>
+                    </tr>
+                    <tr>
+                        <td>player_level</td>
+                        <td>The description of the player's rating level.</td>
+                        <td>string</td>
+                    </tr>
+
+                    </table>
+  
             
+            </p>
 
             <div class="row">
                 <div class="col-md-6 col-xl-4">
@@ -96,12 +230,7 @@
                     </div>
                 </div>
             </div>
-           
 
-
-            <!-- Maps -->
-            <div id="mapid"></div>
-            <div id="stackedbarchart"></div>
 
         </div>
 
