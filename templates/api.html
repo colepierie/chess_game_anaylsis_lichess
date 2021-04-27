@@ -88,8 +88,6 @@
             </div>
             <p>
                 Data sourced from Kaggle's <a href="https://www.kaggle.com/datasnaek/chess">Chess Game Dataset (Lichess)</a> data set.
-                <br>
-                A set of just over 20,000 games collected from a selection of users on the site Lichess.org
                 <br><br>
                 <strong>Base: </strong><a href="https://chessgameanalysis-lichess.herokuapp.com/api/v1.0/chess">https://chessgameanalysis-lichess.herokuapp.com/api/v1.0/chess</a>
                 <br>
@@ -107,7 +105,7 @@
                     </tr>
                     <tr>
                       <td>format</td>
-                      <td>The type of game played. Valid values include: Bullet, Blitz, Classic, and Rapid</td>
+                      <td>The type of time control the game had. Valid values include: Bullet, Blitz, Classic, and Rapid</td>
                       <td>string</td>
                     </tr>
                     <tr>
@@ -117,12 +115,12 @@
                       </tr>
                       <tr>
                         <td>book_moves</td>
-                        <td></td>
+                        <td>Opening moves that are considered "standard" for the positionin the beginnnig of the game</td>
                         <td>integer</td>
                       </tr>
                       <tr>
                         <td>opening_name</td>
-                        <td>The name given to the first move played in the game.</td>
+                        <td>The name of the Opening that the players are using/td>
                         <td>string</td>
                       </tr>
                       <tr>
@@ -142,7 +140,7 @@
                       </tr>
                       <tr>
                         <td>white_rating</td>
-                        <td>The rating assigned to the player who played white corresponding to their performance versus other player.</td>
+                        <td>The elo rating of the player playing white</td>
                         <td>integer</td>
                       </tr>
                       <tr>
@@ -152,7 +150,7 @@
                       </tr>
                       <tr>
                         <td>black_rating</td>
-                        <td>The rating assigned to the player who played black corresponding to their performance versus other player.</td>
+                        <td>The elo rating of the player playing black.</td>
                         <td>integer</td>
                       </tr>
                   </table>
@@ -186,17 +184,17 @@
                     </tr>
                         <tr>
                         <td>player_rating</td>
-                        <td>The rating assigned to the player corresponding to their performance versus other player.</td>
+                        <td>The elo rating of the player</td>
                         <td>integer</td>
                     </tr>
                     <tr>
                         <td>opening_name</td>
-                        <td>The name given to the first move played in the game.</td>
+                        <td>The name of the Opening that the players are using</td>
                         <td>string</td>
                     </tr>
                     <tr>
                         <td>book_moves</td>
-                        <td></td>
+                        <td>Opening moves that are considered "standard" for the positionin the beginnnig of the game</td>
                         <td>integer</td>
                     </tr>
                     <tr>
@@ -206,17 +204,17 @@
                     </tr>
                     <tr>
                         <td>result</td>
-                        <td>The conclusive state of the game for the player. Valid values include: won and lost.</td>
+                        <td>The conclusive state of the game for the player. Valid values include: won, draw and lost.</td>
                         <td>string</td>
                     </tr>
                     <tr>
                         <td>rating_difference</td>
-                        <td>The difference in the player's rating and their opponent.</td>
+                        <td>The difference in the player's elo rating and their opponent.</td>
                         <td>integer</td>
                     </tr>
                     <tr>
                         <td>player_level</td>
-                        <td>The description of the player's rating level.</td>
+                        <td>The level a player is considering their elo rating.</td>
                         <td>string</td>
                     </tr>
 
