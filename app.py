@@ -32,7 +32,7 @@ def api_doc():
 
 # set up route for analysis documentation
 @app.route("/analysis-documentation")
-def api_doc():
+def analysis_doc():
     return render_template("analysis.html")
 
 # route for full data set
