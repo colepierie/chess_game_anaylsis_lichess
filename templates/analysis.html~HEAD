@@ -43,7 +43,7 @@
                     <a href="index.html">Home</a>
                 </li>
                 <li>
-                    <a href="/">Analysis</a>
+                    <a href="/">About</a>
                 </li>
                 <li>
                     <a href="api.html">API</a>
@@ -51,25 +51,25 @@
             </ul>
 
             <!-- Filters in Navigation Bar-->
-            <!-- <form class="navbar-form navbar-right" role="search">
+            <form class="navbar-form navbar-right" role="search">
                 <div class="fheading">
                     <h5>Filters</h5>
                 </div>
                 <div class="form-group">
 
-                    <! start and end date filters-->
-                    <!-- <input type="text" name="" value="" id="startdate" class="form-control" placeholder="01/01/2020">
+                    <!-- start and end date filters-->
+                    <input type="text" name="" value="" id="startdate" class="form-control" placeholder="01/01/2020">
                     <input type="text" name="" value="" id="enddate" class="form-control" placeholder="12/31/2020">
 
-                    <! include fire/earthquake data filters -->
-                    <!-- <input type="checkbox" id="fireform" name="fireform" value="Fire" >
+                    <!-- include fire/earthquake data filters -->
+                    <input type="checkbox" id="fireform" name="fireform" value="Fire" >
                     <label for="vehicle1"> Fire</label><br>
                     <input type="checkbox" id="earthquake" name="earthquake" value="earthquake" >
                     <label for="vehicle2"> Earthquake</label><br>
                 </div>
                 <div>
                     <input type="button" class="btn btn-sm btn-primary" id="filter" value="Filter">
-                </div> --> --> -->
+                </div>
 
         </nav>
 
@@ -85,6 +85,10 @@
             </div>
             <div class="line"></div>
 
+            <div class='tableauPlaceholder' id='viz1619279809003' style='position: relative'>
+                <noscript><a href='#'><img alt='top 15 openings for white ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ch&#47;chess_16190538411440&#47;top15openingsforwhite&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='chess_16190538411440&#47;top15openingsforwhite' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ch&#47;chess_16190538411440&#47;top15openingsforwhite&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1619279809003');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+            
+
             <div class="row">
                 <div class="col-md-6 col-xl-4">
                     <div class="card mb-3 widget-content bg-midnight-bloom">
@@ -96,13 +100,13 @@
 
 
             <!-- Maps -->
-            <!-- <div id="mapid"></div>
-            <div id="stackedbarchart"></div> -->
+            <div id="mapid"></div>
+            <div id="stackedbarchart"></div>
 
         </div>
 
         <!-- Bar Chart-->
-        <!-- <div id="chartid"> -->
+        <div id="chartid">
 
         </div>
 
