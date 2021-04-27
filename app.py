@@ -45,7 +45,7 @@ def chess_data():
         test_dict={"properties":{}}
         
         test_dict["properties"]["id"]=id
-        test_dict["properties"]["rated"]=format
+        test_dict["properties"]["format"]=format
         test_dict["properties"]["victory_status"]=victory_status
         test_dict["properties"]["book_moves"]=book_moves
         test_dict["properties"]["opening_name"]=opening_name
@@ -75,7 +75,7 @@ def player_data():
         test_dict={"properties":{}}
         
         test_dict["properties"]["game_id"]=game_id
-        test_dict["properties"]["rated"]=format
+        test_dict["properties"]["format"]=format
         test_dict["properties"]["player_id"]=player_id
         test_dict["properties"]["player_rating"]=player_rating
         test_dict["properties"]["opening_name"]=opening_name
