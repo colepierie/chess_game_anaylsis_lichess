@@ -30,6 +30,11 @@ def home():
 def api_doc():
     return render_template("api.html")
 
+# set up route for analysis documentation
+@app.route("/analysis-documentation")
+def api_doc():
+    return render_template("analysis.html")
+
 # route for full data set
 @app.route("/api/v1.0/chess")
 def chess_data():
