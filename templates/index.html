@@ -7,10 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>chess Win Rates</title>
 
-  <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 
     <!-- Leaflet CSS -->
@@ -30,7 +32,7 @@
 </head>
 
 <body>
-  
+
     <div class="wrapper">
         <!-- Sidebar -->
         <nav id="sidebar">
@@ -49,7 +51,6 @@
                     <a href="https://chessgameanalysis-lichess.herokuapp.com/api-documentation">API</a>
                 </li>
             </ul>
-
         </nav>
 
         <!-- Page Content -->
@@ -63,32 +64,51 @@
                 <h1>Chess Win Rates Analysis</h1>
             </div>
             <div class="line"></div>
-            
+
+            <div class='tableauPlaceholder' id='viz1619546149461' style='position: relative'><noscript><a href='#'><img
+                            alt='Chess Win Rates '
+                            src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Li&#47;LichessAnalysis_16194387240020&#47;ChessWinRates&#47;1_rss.png'
+                            style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='LichessAnalysis_16194387240020&#47;ChessWinRates' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image'
+                        value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Li&#47;LichessAnalysis_16194387240020&#47;ChessWinRates&#47;1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en' />
+                    <param name='filter' value='publish=yes' />
+                </object></div>
+            <script
+                type='text/javascript'>                    var divElement = document.getElementById('viz1619546149461'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1258px'; vizElement.style.height = '931px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1258px'; vizElement.style.height = '931px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1627px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+
 
             <div class="row">
                 <div class="col-md-6 col-xl-4">
                     <div class="card mb-3 widget-content bg-midnight-bloom">
-                        
+
                     </div>
                 </div>
             </div>
+
+
+
            
 
-
-            <!-- Maps -->
-            <div id="mapid"></div>
-            <div id="stackedbarchart"></div>
-
         </div>
-
-        <!-- Bar Chart-->
-        <div id="chartid">
+        
 
         </div>
 
     </div>
 
-    <h1>Chess Win Rates</h1>
+    
 
 
 
@@ -99,9 +119,11 @@
 
     <!-- D3 JavaScript -->
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-  
+
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
@@ -118,13 +140,13 @@
 
     <!-- Marker Cluster JS -->
     <!-- <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script> -->
-    
+
     <!-- Leaflet heatmap plugin-->
     <!-- <script type="text/javascript" src="../static/js/leaflet-heat.js"></script> -->
-    
+
     <!-- API Key-->
     <script type="text/javascript" src="../static/js/config.js"></script>
-    
+
 
     <!-- Stacked bar chart-->
     <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -134,7 +156,7 @@
 
     <!-- JS -->
     <script type="text/javascript" src="../static/js/logic.js"></script>
-    
+
     <!-- Test-JS -->
     <!-- <script type="text/javascript" src="../static/js/test.js"></script> -->
 
