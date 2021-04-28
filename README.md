@@ -18,6 +18,8 @@ To make things easier for ourselves, we dropped all non-rated games, leaving us 
 
 ## Logistic Regression
 
+We performed a Logistic regression on whether or not a players rating, the difference between their rating and their opponents, and the number of book moves in the game could reliably predict whether or not the player would either win/draw or lose the game. We ran two separate regressions, one on the players using white, and the other for players using black. After running the model, for both white and black, the model predicted the winner around 64% in the test data. While that is slightly better than a coin flip, it's not high enough to reliably predict going forward. It’s interesting that the color had nearly no effect on our data score, with white having a percentage of 64.3 and black with a percentage of 64.0. 
+
 ## Neural Network
 
 The Sequential Neural Network model tested whether the below nine variables could reliably predict the winner of the match.
