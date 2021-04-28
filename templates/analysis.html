@@ -41,41 +41,15 @@
 
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="index.html">Home</a>
+                    <a href="https://chessgameanalysis-lichess.herokuapp.com">Home</a>
                 </li>
                 <li>
                     <a href="/">Analysis</a>
                 </li>
                 <li>
-                    <a href="api.html">API</a>
+                    <a href="https://chessgameanalysis-lichess.herokuapp.com/api-documentation">API</a>
                 </li>
             </ul>
-
-            <!-- Filters in Navigation Bar-->
-
-            <!-- <form class="navbar-form navbar-right" role="search">
-
-                <div class="fheading">
-                    <h5>Filters</h5>
-                </div>
-                <div class="form-group">
-
-
-                    <! start and end date filters-->
-                    <!-- <input type="text" name="" value="" id="startdate" class="form-control" placeholder="01/01/2020">
-                    <input type="text" name="" value="" id="enddate" class="form-control" placeholder="12/31/2020">
-
-                    <! include fire/earthquake data filters -->
-                    <!-- <input type="checkbox" id="fireform" name="fireform" value="Fire" >
-
-                    <label for="vehicle1"> Fire</label><br>
-                    <input type="checkbox" id="earthquake" name="earthquake" value="earthquake" >
-                    <label for="vehicle2"> Earthquake</label><br>
-                </div>
-                <div>
-                    <input type="button" class="btn btn-sm btn-primary" id="filter" value="Filter">
-
-                </div> --> --> -->
 
         </nav>
 
@@ -92,9 +66,42 @@
             </div>
             <div class="line">
             </div>
-            <p> Insert Analysis Here
-            
-            </p>
+            <p> 
+            <h2>Intro to the Data Set</h2>
+            <br>
+            This data set contains over 20,000 games from a variety of users on the chess site “lichess.com”. While we retrieve the data from kaggle, the original source was taken using the Lichess API. Our goal was to focus on a few general questions: All things being equal, who wins more White or Black? And finally, which openings are best for White and Black?
+            <br><br>
+            <h3>Python</h3>
+            <br>
+            To make things easier for ourselves, we dropped all non-rated games, leaving us with a little over 16,000 games still to analyze. The next step was to simplify the increment code column. This series contained the varied time formats that lichess has to offer. Since the increment is customizable, there's a near infinite amount of options that players can use for their games. While this is a great feature for the user, it's not as great for the analyst. To solve this, we created a loop that went through each input, and outputted the format that the increment would roughly fall under. The four formats are bullet(under 1 min.), blitz(1-9 min), rapid (10-20), and classical (above 20). We then created a new sub dataset that contained each individual player along with their rating, the difference of the rating between them and their opponent, and finally their “player level”. To create the “player level” column, we once again used a loop. For this, we used the player rating chart and assigned them a rating equal to their rating if it were a FIDE (the governing body of Chess) rating. After it was all said and done, we moved on to the actual analysis!
+            <br><br>
+            <h3>Machine Learning</h3>
+            <br>
+            <h4>Logistic Regression</h4>
+            <br><br>
+            <h4>Neural Network</h4>
+            The Sequential Neural Network model tested whether the below nine variables could reliably predict the winner of the match.
+            <br><br>
+            <ol>
+                <li>Format</li>
+                <li>Victory_status</li>
+                <li>Book_moves</li>
+                <li>Opening_name</li>
+                <li>Turns</li>
+                <li>White_id</li>
+                <li>White_rating</li>
+                <li>Black_id</li>
+                <li>Black_rating</li>
+            </ol>
+            <br>
+            After running the network with the nine input variables, 4 hidden nodes, and 500 epochs with the Adam optimizer enabled the best model predicted the winner with 66.53% accuracy and 59.71% loss of the test data.
+            <br><br>
+            This is not an accurate model so in an attempt to increase the accuracy of the model, we tested eight and twelve nodes with the same parameters. The best model for this test ended up still being the initial model with 4 nodes.
+            <br><br>
+            <h2>Conclusion</h2>
+            <br><br>
+            INSERT CONCLUSION HERE
+        </p>
 
 
             <div class="row">
@@ -116,12 +123,6 @@
     <h1>Chess Win Rates</h1>
 
 
-
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-        integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-        crossorigin=""></script>
-
     <!-- D3 JavaScript -->
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -141,27 +142,9 @@
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-    <!-- Marker Cluster JS -->
-    <!-- <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script> -->
-    
-    <!-- Leaflet heatmap plugin-->
-    <!-- <script type="text/javascript" src="../static/js/leaflet-heat.js"></script> -->
-    
-    <!-- API Key-->
-    <script type="text/javascript" src="../static/js/config.js"></script>
-    
-
-    <!-- Stacked bar chart-->
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
     <!-- JS -->
-    <script type="text/javascript" src="../static/js/logic.js"></script>
-    
-    <!-- Test-JS -->
-    <!-- <script type="text/javascript" src="../static/js/test.js"></script> -->
+    <!-- <script type="text/javascript" src="../static/js/logic.js"></script> -->
+
 
     <!-- Sidebar Formatting -->
     <script type="text/javascript">
