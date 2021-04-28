@@ -37,4 +37,6 @@ After running the network with the nine input variables, 4 hidden nodes, and 500
 
 This is not an accurate model so in an attempt to increase the accuracy of the model, we tested eight and twelve nodes with the same parameters. The best model for this test ended up still being the initial model with 4 nodes.
 
-Conclusion
+# Conclusion
+
+Our models did not meet an accuracy level we would have hoped to achieve.  With more time we might try running different models or using a larger dataset to achieve more reliable predictions.
